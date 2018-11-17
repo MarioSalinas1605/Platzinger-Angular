@@ -7,7 +7,7 @@ import { User } from '../interfaces/user';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  friends: User[]
   constructor() {
     let myUser: User = {
       nick: 'Eduardo',
@@ -17,7 +17,35 @@ export class HomeComponent implements OnInit {
       friend: true,
       uid: 1
     }
-    console.log(myUser)
+    let usuario2: User = {
+      nick: 'Freddy',
+      age: 28,
+      email: 'fred@aoe.aoe',
+      friend: true,
+      uid: 1
+    };
+    let usuario3: User = {
+      nick: 'Yuliana',
+      age: 18,
+      email: 'yuli@aoe.aoe',
+      friend: true,
+      uid: 1
+    };
+    let usuario4: User = {
+      nick: 'Ricardo',
+      age: 17,
+      email: 'rick@aoe.aoe',
+      friend: false,
+      uid: 1
+    };
+    let usuario5: User = {
+      nick: 'Marcos',
+      age: 30,
+      email:'marcos@aoe.aoe',
+      friend: false,
+      uid: 1
+    };
+    this.friends = [myUser, usuario2, usuario3, usuario4, usuario5]
    }
 
   ngOnInit() {
