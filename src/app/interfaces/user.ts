@@ -7,4 +7,5 @@ export interface User {
     uid: any;
     mensajepersonal?: string
     status?: string
+    avatar?: string
 }

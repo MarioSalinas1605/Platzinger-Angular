@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user';
 import { UserService } from '../services/user.service';
 import { AuthenticationService } from '../services/authentication.service';
+import { ImageCroppedEvent } from 'ngx-image-cropper/src/image-cropper.component';
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +11,8 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class ProfileComponent implements OnInit {
   user: User
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
   constructor(private userService: UserService, private authenticationService: AuthenticationService) {
     this.authenticationService.getStatus().subscribe(
       (status)=>{
@@ -40,5 +43,17 @@ export class ProfileComponent implements OnInit {
     .catch((error)=>{
       console.log(error)
     })
+  }
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+  }
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+  }
+  imageLoaded() {
+    // show cropper
+  }
+  loadImageFailed() {
+    // show message
   }
 }
