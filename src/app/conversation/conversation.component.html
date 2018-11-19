@@ -1,67 +1,46 @@
-<div class="conversationContainer">
-  <div class="container">
-    <div class="row perfilAmigo">
-      <div class="col-md-3">
-        <div class="avatarFrameonline">
-          <img src="assets/img/generic_avatar.png" class="avatarImage img-fluid">
-        </div>
-        <hr/>
-      </div>
-      <div class="col-md-9">
-        <h3>Eduardo (online )</h3>
-        <p>Mensaje personal</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3">
-
-      </div>
-      <div class="col-9">
-        <form>
-          <div class="form-group">
-            <div class="card">
-              <div class="card-body">
-                <div class="col">
-                  <i>
-                    <img src="assets/img/generic_avatar.png"alt=""class="icon-chat">
-                  </i>
-                  <span class="badge badge-primary">Hola mundo</span>
-                </div>
-                <div class="col text-right">
-                  <i>
-                    <span class="badge badge-primary">Hola ¿como estas?</span>
-                    <img src="assets/img/generic_avatar.png"alt=""class="icon-chat">
-                  </i>
-                </div>
-              </div>
-            </div>
+<div class="conversationContainer bluewhitebg">
+  <div class="row">
+    <div class="col-sm-3 maxwi300">
+      <div id="conversationSidebar">
+        <div class="vh30">
+          <div class="avatarFrameonline">
+            <img src="{{'assets/img/generic_avatar.png'}}" class="avatarImage img-fluid">
           </div>
-        </form>
-      </div>
-
-    </div>
-    <div class="row opcionesRespuesta">
-      <div class="col-md-3">
-        <div class="avatarFrameonline">
-          <img src="assets/img/generic_avatar.png" class="avatarImage img-fluid">
+        </div>
+        <div class="vh30"></div>
+        <div class="vh25">
+          <div class="avatarFrameonline">
+            <img src="{{'assets/img/generic_avatar.png'}}" class="avatarImage img-fluid">
+          </div>
         </div>
       </div>
-      <div class="col-md-9">
-        <div class="container mensajediv">
-          <div class="row">
-            <input type="text" class="mensaje">
+    </div>
+    <div class="col-sm-9">
+      <br />
+      <span class="friendName">Amigo 1</span> (online)
+      <hr />
+      <div class="vh55 overscroll pabo10" id="messageArea">
+      </div>
+      <div class="messageControlsContainer">
+        <textarea [(ngModel)]="textMessage" (keyup.enter)="sendMessage()" class="form-control" cols="30" rows="5" ></textarea>
+        <div id="messageToolBar">
+          <div class="item">
+            <img src="assets/img/icons/regular_smile.gif" class="tool">
+            <i name="caret-down"></i>
           </div>
-          <div class="row">
-            <div class="col form-control opciones">
-              <a href="#"><img src="assets/img/icons/regular_smile.gif" class="btnemoji"></a>
-              <a href="#"><img src="assets/img/icons/wink_smile.gif" class="btnemoji"></a>
-              <a class="btn btn-primary"> Enviar </a>
-              <label class="btn btn-dark selectImage">
-                <input type="file">
-                Subir avatar
-              </label>
-            </div>
+          <div class="item">
+            <img src="assets/img/icons/wink_smile.gif" class="tool">
+            <i name="caret-down"></i>
           </div>
+          <div class="item" >
+            <img src="assets/img/zumbido.png" class="tool">
+          </div>
+
+          <a class="btn btn-primary btn-sm marri10" accept="image/*">Enviar</a>
+          <label class="custom-file-upload">
+            <input type="file">
+            <i name="image"></i> Seleccionar Imagen
+          </label>
         </div>
       </div>
     </div>
