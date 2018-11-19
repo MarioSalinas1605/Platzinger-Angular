@@ -16,6 +16,7 @@ export class ConversationComponent implements OnInit {
   user: User
   conversation_id: string
   textMessage: string
+  conversation: any[]
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService
     , private conversationService: ConversationService, private authenticationService: AuthenticationService){
   this.friendid = this.activatedRoute.snapshot.params['uid']
@@ -29,6 +30,7 @@ export class ConversationComponent implements OnInit {
               this.user = user
               const ids = [this.user.uid, this.friend.uid].sort()
               this.conversation_id = ids.join('|')
+              this.getConversation()
             }
           )
         }
@@ -56,5 +58,33 @@ export class ConversationComponent implements OnInit {
         this.textMessage=''
       }
     )
+  }
+
+  getConversation(){
+    this.conversationService.getConversation(this.conversation_id).valueChanges().subscribe(
+      (data)=>{
+        console.log(data)
+        this.conversation=data
+        this.conversation.forEach((message)=>{
+          if (!message.seen) {
+              message.seen = true
+              this.conversationService.editConversation(message)
+              const audio = new Audio('assets/sound/new_message.m4a')
+              audio.play()
+          }
+        })
+      },
+      (error)=>{
+        console.log(error)
+      }
+    )
+  }
+  getUserNickById(id){
+    if (id == this.friend.uid) {
+        return this.friend.nick
+    }
+    else{
+      return this.user.uid
+    }
   }
 }
