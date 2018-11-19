@@ -1,0 +1,45 @@
+.conversationContainer{
+  background-image: url('/assets/img/msnbg.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat
+}
+.avatarImage{
+  max-width: 80px;
+}
+.mensaje{
+  height: 80px;
+  width: 100%;
+}
+.mensajediv{
+  background-color: red;
+}
+.opciones{
+  background-color: gray;
+  height: 55px;
+}
+.btnemoji{
+  margin: 0 10px;
+}
+.perfilAmigo{
+  padding-top: 25px;
+}
+.selectImage{
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+.opcionesRespuesta{
+  padding-top: 15px;
+}
+#conversationContainer {
+  background-image: url(/assets/img/msnbg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+img.avatarImage{
+  height: 100px;
+  width: 100px;
+}
+.icon-chat{
+  height: 40px;
+  width: 40px;
+}

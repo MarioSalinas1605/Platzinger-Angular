@@ -47,3 +47,6 @@
 .generalContent{
   margin-top: 56px;
 }
+input[type='file']{
+  display: none;
+}
