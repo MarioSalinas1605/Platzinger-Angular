@@ -13,8 +13,8 @@
           <h3>Iniciar Sesión</h3>
         </div>
         <div class="borderedContainer">
-          <input type="email" placeholder="Ingrese email" class="form-control marbot15" name="" value="">
-          <input type="password" placeholder="Ingrese contraseña" class="form-control marbot15" name="" value="">
+          <input [(ngModel)]="email" type="email" placeholder="Ingrese email" class="form-control marbot15" name="" value="">
+          <input [(ngModel)]="password" type="password" placeholder="Ingrese contraseña" class="form-control marbot15" name="" value="">
           <input *ngIf="operation == 'register'" type="nick" placeholder="Ingrese nick" class="form-control marbot15" name="" value="">
         </div>
         <p *ngIf="operation == 'register'">Ya tienes cuenta? Has
@@ -24,8 +24,8 @@
           <a (click)="operation = 'register'">Registrarse</a>
         </p>
         <div class="center martop15">
-          <a *ngIf="operation == 'login'" href="#" class="btn btn-success">Iniciar sesión</a>
-          <a *ngIf="operation == 'register'" href="#" class="btn btn-primary">Registrarme</a>
+          <a (click)="login()" *ngIf="operation == 'login'" class="btn btn-success">Iniciar sesión</a>
+          <a (click)="register()" *ngIf="operation == 'register'" class="btn btn-primary">Registrarme</a>
         </div>
       </div>
     </div>
