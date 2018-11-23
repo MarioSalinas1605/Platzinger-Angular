@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
       const user = {
         uid: data.user.uid,
         email: this.email,
-        nick: this.nick
+        nick: this.nick,
+        status: 'Online',
+        mensajepersonal: 'MSN mensaje'
       }
       this.userService.createUser(user)
       .then((data2)=>{

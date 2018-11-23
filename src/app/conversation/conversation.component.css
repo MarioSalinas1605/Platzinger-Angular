@@ -86,3 +86,8 @@ img.conversationPicture {
 .pabo10 {
   padding-bottom: 10px;
 }
+.messageGroup span{
+  padding: 4px;
+  background-color: gray;
+  border-radius: 4px;
+}
