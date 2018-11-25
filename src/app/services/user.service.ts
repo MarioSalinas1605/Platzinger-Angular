@@ -26,4 +26,8 @@ export class UserService {
   setAvatar(avatar, uid){
     return this.angularFireDatabase.object('/users/'+uid+'/avatar').set(avatar)
   }
+  addFriend(userid, friendid){
+    this.angularFireDatabase.object('users/'+userid+'/friends/'+friendid).set(friendid)
+    return this.angularFireDatabase.object('users/'+friendid+'/friends/'+userid).set(userid)
+  }
 }
