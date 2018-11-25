@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       .then((data2)=>{
         alert("Loggeado correcto")
         console.log(data2)
+        this.router.navigate(['home'])
       })
       .catch((error2)=>{
         alert("Ocurrió un error")

@@ -18,10 +18,10 @@
           <input [(ngModel)]="nick" *ngIf="operation == 'register'" type="nick" placeholder="Ingrese nick" class="form-control marbot15" name="" value="">
         </div>
         <p *ngIf="operation == 'register'">Ya tienes cuenta? Has
-          <a (click)="operation = 'login'">Login</a>
+          <a (click)="operation = 'login'"><span style="color:blue">Login</span></a>
         </p>
         <p *ngIf="operation == 'login'">No tienes cuenta?
-          <a (click)="operation = 'register'">Registrarse</a>
+          <a (click)="operation = 'register'"><span style="color:blue">Registrarse</span></a>
         </p>
         <div class="center martop15">
           <a (click)="login()" *ngIf="operation == 'login'" class="btn btn-success">Iniciar sesión</a>

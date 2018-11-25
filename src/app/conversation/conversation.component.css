@@ -91,3 +91,7 @@ img.conversationPicture {
   background-color: gray;
   border-radius: 4px;
 }
+.right{
+  display:flex;
+  justify-content: center;
+}

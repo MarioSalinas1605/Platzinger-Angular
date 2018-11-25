@@ -20,7 +20,7 @@
       <span class="friendName">Amigo 1</span> (online)
       <hr />
       <div class="vh55 overscroll pabo10" id="messageArea">
-        <div class="messageGroup" *ngFor="let m of conversation">
+        <div class="messageGroup you" *ngFor="let m of conversation">
           <b>{{getUserNickById(m.sender)}}</b> dice: <br>
           <span>{{m.text}}</span>
         </div>
