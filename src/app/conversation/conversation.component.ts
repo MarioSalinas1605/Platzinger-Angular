@@ -24,6 +24,7 @@ export class ConversationComponent implements OnInit {
   this.userService.getUserById(this.friendid).valueChanges().subscribe(
     (data:User)=>{
       this.friend=data
+      console.log(data)
       this.authenticationService.getStatus().subscribe(
         (session)=>{
           this.userService.getUserById(session.uid).valueChanges().subscribe(
