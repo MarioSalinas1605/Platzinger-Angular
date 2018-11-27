@@ -8,4 +8,5 @@ export interface User {
     mensajepersonal?: string
     status?: string
     avatar?: string
+    friends?: any
 }
