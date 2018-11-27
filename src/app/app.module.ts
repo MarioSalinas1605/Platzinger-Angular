@@ -23,6 +23,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { RequestComponent } from './modals/request/request.component';
+import { ContactComponent } from './contact/contact.component';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard]},
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     MenuComponent,
     SearchPipe,
-    RequestComponent
+    RequestComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
